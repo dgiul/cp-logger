@@ -1,0 +1,34 @@
+{
+  "name": "titanious-logger",
+  "description": "Simple but efficient logging module used by Titanious",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "titanious",
+    "log",
+    "logger"
+  ],
+  "author": {
+    "name": "Jimmy Aupperlee",
+    "email": "jimmy@codeprogressive.com"
+  },
+  "contributors": [],
+  "dependencies": {
+      "should": "*"
+  },
+  "version": "0.0.2",
+  "main": "./lib/log",
+  "directories": {
+    "test": "./test"
+  },
+  "readme": "",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": ""
+  },
+  "_id": "titanious-logger@0.0.2",
+  "_from": "titanious-logger@*"
+}
