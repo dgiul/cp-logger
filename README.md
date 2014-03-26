@@ -1,7 +1,7 @@
 cpLogger
 ========
 
-A very tiny lightweight logger module used by many codeProgressive projects. The logger is designed to easily log on different levels such as; 'error' and 'warning'. It also gives the option to write the log to a file in a descent manner.
+A tiny lightweight logger module used by many codeProgressive projects. The logger is designed to easily log on different levels such as; 'error' and 'warning'. It also gives the option to write the log to a file in a descent manner.
 
 Installation
 ------------
