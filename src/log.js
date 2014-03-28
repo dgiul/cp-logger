@@ -1,21 +1,22 @@
 /**
- * Titanious.Log
+ * CP Logger
  *
  * Copyright(c) 2014 Jimmy Aupperlee <j.aup.gt@gmail.com>
  *
  * GPLv3 Licensed
  */
 
+'use strict';
+
 /**
  * Current version of the Titanious Log module
  *
  * @type {string}
  */
-exports.version = "0.0.2";
-
+exports.version = "0.0.3";
 
 exports.options = Object({
-    catchAllExceptions : true,
+    catchAllExceptions : false,
     colors : true,
     append : false,
     sendToScreen : true,
@@ -37,30 +38,30 @@ exports.options = Object({
  * options: {
  *
  *      catchAllExceptions : Boolean
- *      default true
+ *      default false
  *
- *          Catch all exceptions which will try to stop the application from crashing, but
- *          it might make it harder to debug problems / issues
+ *          WARNING: Do not use this option! Catch all exceptions which will try to stop the application from crashing. Will likely cause instability
+ *          as your application will probably not know what to do after triggering an exception.
  *
  *      colors : Boolean
  *      default true
  *
- *          Use colors in the console or not (will be left out in the file)
+ *          Enable or disable colors in the console
  *
  *      sendToScreen : Boolean
  *      default true
  *
- *          Sand logs to the stdout to display (the console)
+ *          Send the logs to the stdout (the console), because maybe you only want to write to a log file and not show them in the console.
  *
  *      saveToFile : Boolean
  *      default false
  *
- *          Save all logs to a file
+ *          Save all logs to the file specified in the filePath option.
  *
  *      filePath : String
  *      default "./app.log"
  *
- *          The location to save the log file to
+ *          If the saveToFile option is enabled, this is the file which will be written to when logging.
  *
  * }
  * </code>
@@ -75,9 +76,9 @@ exports.options = Object({
 exports.init = function ( level , options ) {
 
     // Set the default level if not filled
-    level = level || 3;
+    level = parseInt(level, 10) || 3;
 
-    if(typeof options == "object") {
+    if(typeof options === "object") {
 
         // prepare the options for Object.create
         var opts = {};
@@ -87,11 +88,11 @@ exports.init = function ( level , options ) {
                 enumerable: true,
                 writeable: true,
                 configurable: true
-            }
-        };
+            };
+        }
 
         // let Object.create merge the options with the defaults
-        var options = Object.create(exports.options, opts);
+        options = Object.create(exports.options, opts);
 
         // bind to this
         for(var o in options){
@@ -104,6 +105,6 @@ exports.init = function ( level , options ) {
 
     // Return the object with input possibilities
     return new exports.input( level , options );
-}
+};
 
 exports.input = require("./input");

@@ -1,10 +1,10 @@
 {
-  "name": "titanious-logger",
-  "description": "Simple but efficient logging module used by Titanious",
+  "name": "cpLogger",
+  "description": "A tiny lightweight logger module used by many codeProgressive projects.",
   "homepage": "",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/CodeProgressive/cpLogger.git"
   },
   "keywords": [
     "titanious",
@@ -22,7 +22,7 @@
       "grunt-contrib-watch": "~0.5.3",
       "grunt": "~0.4.4"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./lib/log",
   "directories": {
     "test": "./test"
@@ -32,6 +32,6 @@
   "bugs": {
     "url": ""
   },
-  "_id": "titanious-logger@0.0.2",
+  "_id": "titanious-logger@0.0.3",
   "_from": "titanious-logger@*"
 }

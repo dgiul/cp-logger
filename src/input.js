@@ -1,10 +1,12 @@
 /**
- * Titanious.Log
+ * CP Logger
  *
  * Copyright(c) 2014 Jimmy Aupperlee <j.aup.gt@gmail.com>
  *
  * GPLv3 Licensed
  */
+
+'use strict';
 
 var fs = require("fs"),
     colors = require("colors"),
@@ -63,17 +65,18 @@ Input.prototype.openFileStream = function( ) {
     self.fileStream = fs.createWriteStream(self.options.fileLocation,
         {
             flags: ((self.options.append) ? 'a' : 'w'),
-            mode: 0644,
+            mode: 644,
             encoding: 'utf8'
         }
     ).on('end', function() {
         self.openFileStream();
     });
+
     if(!self.fileStream.writable) {
         self.error("The specified file location could not be written to. Feature disabled.");
         self.options.saveToFile = false;
     }
-}
+};
 
 /**
  * The insert function which actually shows or puts the
@@ -85,6 +88,7 @@ Input.prototype.openFileStream = function( ) {
 Input.prototype.insert = function( string , type ) {
 
     var s = "[" + type.toUpperCase() + "]", level = 0;
+
     switch(type) {
         case "warning":
             level = 1;
@@ -103,15 +107,17 @@ Input.prototype.insert = function( string , type ) {
 
     if(level <= this.level) {
 
-        if(this.options.sendToScreen) {
-            if(this.options.colors) s = s[type];
-            process.stdout.write(s + '\n');
-        }
         if(this.options.saveToFile) {
             this.fileStream.write(s + '\n');
         }
+        if(this.options.sendToScreen) {
+            if(this.options.colors) {
+                s = s[type];
+            }
+            process.stdout.write(s + '\n');
+        }
     }
-}
+};
 
 /**
  * The info level input to be put into the log
@@ -119,7 +125,7 @@ Input.prototype.insert = function( string , type ) {
  */
 Input.prototype.info = function( msg ) {
     this.insert( msg , "info" );
-}
+};
 
 /**
  * The debug level input to be put into the log
@@ -127,7 +133,7 @@ Input.prototype.info = function( msg ) {
  */
 Input.prototype.debug = function( msg ) {
     this.insert( msg , "debug" );
-}
+};
 
 /**
  * The warning level input to be put into the log
@@ -135,7 +141,7 @@ Input.prototype.debug = function( msg ) {
  */
 Input.prototype.warning = function( msg ) {
     this.insert( msg , "warning" );
-}
+};
 
 /**
  * The error level input to be put into the log
@@ -143,4 +149,4 @@ Input.prototype.warning = function( msg ) {
  */
 Input.prototype.error = function( msg ) {
     this.insert( msg , "error" );
-}
+};
