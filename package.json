@@ -23,12 +23,12 @@
       "grunt-contrib-watch": "~0.5.3",
       "grunt": "~0.4.4"
   },
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "./lib/log",
   "directories": {
     "test": "./test"
   },
   "readmeFilename": "README.md",
-  "_id": "cp-logger@0.0.3",
+  "_id": "cp-logger@0.0.0.4",
   "_from": "cp-logger@*"
 }
