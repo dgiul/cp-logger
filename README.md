@@ -9,13 +9,13 @@ It also gives the option to write the log to a file in a descent manner. A times
 Installation
 ------------
 
-    $ npm install cpLogger
+    $ npm install cp-logger
 
 Usage
 ------------
 Instantiate and initialize the logger module.
 
-    var log = require( 'cpLogger' ).init( <level> , <options> )
+    var log = require( 'cp-logger' ).init( <level> , <options> )
 
 
 *Both parameters are optional.*
