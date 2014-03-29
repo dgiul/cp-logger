@@ -1,15 +1,16 @@
 {
   "name": "cp-logger",
   "description": "A tiny lightweight logger module used by many codeProgressive projects.",
-  "homepage": "",
+  "homepage": "http://codeprogressive.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CodeProgressive/cpLogger.git"
+    "url": "https://github.com/CodeProgressive/cp-logger.git"
   },
   "keywords": [
-    "titanious",
+    "codeProgressive",
     "log",
-    "logger"
+    "logger",
+    "file"
   ],
   "author": {
     "name": "Jimmy Aupperlee",
@@ -27,11 +28,7 @@
   "directories": {
     "test": "./test"
   },
-  "readme": "",
   "readmeFilename": "README.md",
-  "bugs": {
-    "url": ""
-  },
-  "_id": "titanious-logger@0.0.3",
-  "_from": "titanious-logger@*"
+  "_id": "cp-logger@0.0.3",
+  "_from": "cp-logger@*"
 }

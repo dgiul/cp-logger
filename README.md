@@ -1,6 +1,6 @@
-![codeProgressive logo](http://codeprogressive.com/application/assets/images/logo_inverse.svg)
+[![codeProgressive logo](http://codeprogressive.com/application/assets/images/logo_inverse.svg)](http://codeprogressive.com)
 
-cpLogger
+cp-logger
 ========
 
 A tiny lightweight logger module used by many codeProgressive projects. The logger is designed to easily log on different levels such as; 'error' and 'warning'.
