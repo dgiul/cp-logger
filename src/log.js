@@ -13,7 +13,7 @@
  *
  * @type {string}
  */
-exports.version = "0.0.4";
+exports.version = "0.0.5";
 
 exports.options = Object({
     catchAllExceptions : false,

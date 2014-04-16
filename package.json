@@ -17,13 +17,17 @@
     "email": "jimmy@codeprogressive.com"
   },
   "contributors": [],
+  "dependencies" : {
+      "colors" : "~0.6.2",
+      "datetime" : "~0.0.3"
+  }
   "devDependencies": {
       "grunt-contrib-jshint": "~0.6.4",
       "grunt-contrib-nodeunit": "~0.2.0",
       "grunt-contrib-watch": "~0.5.3",
       "grunt": "~0.4.4"
   },
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "./lib/log",
   "directories": {
     "test": "./test"
