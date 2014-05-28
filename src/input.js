@@ -58,6 +58,36 @@ function Input( level , options ) {
     }
 }
 
+/**
+ * Return a formatted date
+ */
+function getDateTime() {
+
+    var now = new Date();
+
+    var hour = now.getHours();
+    hour = (hour < 10 ? "0" : "") + hour;
+
+    var min  = now.getMinutes();
+    min = (min < 10 ? "0" : "") + min;
+
+    var sec  = now.getSeconds();
+    sec = (sec < 10 ? "0" : "") + sec;
+
+    var ms  = now.getMilliseconds();
+
+    var year = now.getFullYear();
+
+    var month = now.getMonth() + 1;
+    month = (month < 10 ? "0" : "") + month;
+
+    var day  = now.getDate();
+    day = (day < 10 ? "0" : "") + day;
+
+    return year + "-" + month + "-" + day + " " + hour + ":" + min + ":" + sec + "," + ms;
+
+}
+
 Input.prototype.openFileStream = function( ) {
 
     var self = this;
@@ -101,9 +131,7 @@ Input.prototype.insert = function( string , type ) {
             break;
     }
 
-    var now = new Date();
-    now.setHours(now.getHours());
-    s += '[' + datetime.format(now, '%T') + '] ' + string;
+    s += '[' + getDateTime() + '] ' + string;
 
     if(level <= this.level) {
 
