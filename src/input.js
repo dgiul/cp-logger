@@ -62,10 +62,10 @@ Input.prototype.openFileStream = function( ) {
 
     var self = this;
 
-    self.fileStream = fs.createWriteStream(self.options.fileLocation,
+    self.fileStream = fs.createWriteStream(self.options.filePath,
         {
             flags: ((self.options.append) ? 'a' : 'w'),
-            mode: 644,
+            //mode: 644,
             encoding: 'utf8'
         }
     ).on('end', function() {

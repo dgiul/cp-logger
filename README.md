@@ -53,7 +53,7 @@ Options
 ------------
 The options object can override each of the following options;
 
-- __catchAllExceptions__ : Boolean (default : __false__)
+- __catchAllExceptions__ : Boolean (default __false__)
      - __WARNING: Do not use this option!__ Catch all exceptions which will try to stop the application from crashing. Will likely cause instability
      as your application will probably not know what to do after triggering an exception.
 
@@ -68,6 +68,9 @@ The options object can override each of the following options;
 
 - __filePath__ : String (default __"./app.log"__)
     - If the __saveToFile__ option is enabled, this is the file which will be written to when logging.
+
+- __append__ : Boolean (default __false__)
+    - If __saveToFile__ is enabled, this will determine if the file should be appended to (__true__) or overwritten (__false__).
 
 License 
 -------
