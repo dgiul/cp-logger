@@ -18,7 +18,7 @@ var fs = require("fs"),
 colors.setTheme({
     debug : 'grey',
     info: 'green',
-    warn: 'yellow',
+    warning: 'yellow',
     error: 'red'
 });
 
